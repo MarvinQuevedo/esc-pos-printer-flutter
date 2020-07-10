@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a94468-40ce-4d17-90f3-a91480c5b049" name="Default Changelist" comment="" />
+    <list default="true" id="e2a94468-40ce-4d17-90f3-a91480c5b049" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/example/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/escposprinter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/escposprinter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -64,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/ocal.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="21" />
+            <state>
+              <caret selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -118,19 +125,6 @@
               <item name="android" type="462c0819:PsiDirectoryNode" />
               <item name=".settings" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="esc-pos-printer-flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="esc-pos-printer-flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="esc-pos-printer-flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="esc-pos-printer-flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -170,6 +164,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1324" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" />
       <window_info id="Structure" side_tool="true" />
@@ -227,8 +222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/ocal.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="21" />
+        <state>
+          <caret selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>
