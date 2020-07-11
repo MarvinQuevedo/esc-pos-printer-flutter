@@ -57,13 +57,14 @@ public class USBPrinterAdapter {
                     if(intent.getBooleanExtra(UsbManager.EXTRA_PERMISSION_GRANTED, false)){
                         Log.i(LOG_TAG, "Success to grant permission for device "+usbDevice.getDeviceId()+", vendor_id: "+ usbDevice.getVendorId()+ " product_id: " + usbDevice.getProductId());
                         mUsbDevice = usbDevice;
+                        Toast.makeText(context, "Impresora conectada", Toast.LENGTH_LONG).show();
                     }else {
                         Toast.makeText(context, "User refused to give USB device permissions" + usbDevice.getDeviceName(), Toast.LENGTH_LONG).show();
                     }
                 }
             } else if(UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)){
                 if(mUsbDevice != null){
-                    Toast.makeText(context, "USB device has been turned off", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "La impresora USB ha sido desconectada", Toast.LENGTH_LONG).show();
                     closeConnectionIfExists();
                 }
             }
@@ -135,7 +136,7 @@ public class USBPrinterAdapter {
         UsbInterface usbInterface = mUsbDevice.getInterface(0);
         for(int i = 0; i < usbInterface.getEndpointCount(); i++){
             final UsbEndpoint ep = usbInterface.getEndpoint(i);
-            if(ep.getType() == UsbConstants.USB_ENDPOINT_XFER_BULK || ep.getType() == 3) {
+            if(ep.getType() == UsbConstants.USB_ENDPOINT_XFER_BULK) {
                 if(ep.getDirection() == UsbConstants.USB_DIR_OUT) {
                     UsbDeviceConnection usbDeviceConnection = mUSBManager.openDevice(mUsbDevice);
                     if(usbDeviceConnection == null) {
@@ -173,7 +174,7 @@ public class USBPrinterAdapter {
                         int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
                         Log.i(LOG_TAG, "Return Status: b-->"+b);
                     }else{
-                        Log.i(LOG_TAG, "La conección con la impresora ha fallado");
+                        Log.i(LOG_TAG, "La conección con el servidor ha fallado");
                         //Toast.makeText(mContext, "Fallo al imprimir", Toast.LENGTH_SHORT).show();
                     }
 
@@ -195,9 +196,16 @@ public class USBPrinterAdapter {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    byte [] bytes = Base64.decode(rawData, Base64.DEFAULT);
-                    int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
-                    Log.i(LOG_TAG, "Return Status: "+b);
+
+                    if(mUsbDeviceConnection !=null){
+                        byte [] bytes = Base64.decode(rawData, Base64.DEFAULT);
+                        int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
+                        Log.i(LOG_TAG, "Return Status: "+b);
+                    }else{
+                        Log.i(LOG_TAG, "La conección con el servidor ha fallado");
+                        //Toast.makeText(mContext, "Fallo al imprimir", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }).start();
             return true;
