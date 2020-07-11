@@ -174,7 +174,7 @@ public class USBPrinterAdapter {
                         int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
                         Log.i(LOG_TAG, "Return Status: b-->"+b);
                     }else{
-                        Log.i(LOG_TAG, "La conección con el servidor ha fallado");
+                        Log.i(LOG_TAG, "La conección con la impresora ha fallado");
                         //Toast.makeText(mContext, "Fallo al imprimir", Toast.LENGTH_SHORT).show();
                     }
 
