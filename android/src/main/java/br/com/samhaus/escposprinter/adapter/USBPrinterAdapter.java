@@ -142,7 +142,7 @@ public class USBPrinterAdapter {
                         Log.e(LOG_TAG, "failed to open USB Connection");
                         return false;
                     }
-                    Toast.makeText(mContext, "Device connected", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(mContext, "Device connected", Toast.LENGTH_SHORT).show();
                     if (usbDeviceConnection.claimInterface(usbInterface, true)){
                         mEndPoint = ep;
                         mUsbInterface = usbInterface;
@@ -169,8 +169,14 @@ public class USBPrinterAdapter {
                 @Override
                 public void run() {
                     byte [] bytes = printData.getBytes(Charset.forName("UTF-8"));
-                    int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
-                    Log.i(LOG_TAG, "Return Status: b-->"+b);
+                    if(mUsbDeviceConnection !=null){
+                        int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
+                        Log.i(LOG_TAG, "Return Status: b-->"+b);
+                    }else{
+                        Log.i(LOG_TAG, "La conección con el servidor ha fallado");
+                        //Toast.makeText(mContext, "Fallo al imprimir", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }).start();
             return true;

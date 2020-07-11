@@ -7,6 +7,8 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 import android.hardware.usb.UsbDevice;
+import android.os.Build;
+
 import br.com.samhaus.escposprinter.adapter.USBPrinterAdapter;
 import java.util.List;
 import java.util.ArrayList;
@@ -54,8 +56,16 @@ public class EscposprinterPlugin implements MethodCallHandler {
         for (UsbDevice usbDevice : usbDevices) {
             HashMap<String, String> deviceMap = new HashMap();
             deviceMap.put("name", usbDevice.getDeviceName());
-            deviceMap.put("manufacturer", usbDevice.getManufacturerName());
-            deviceMap.put("product", usbDevice.getProductName());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                deviceMap.put("manufacturer", usbDevice.getManufacturerName());
+            }else{
+                deviceMap.put("manufacturer", "No soportado");
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                deviceMap.put("product", usbDevice.getProductName());
+            }else{
+                deviceMap.put("product", "NO soportado");
+            }
             deviceMap.put("deviceid", Integer.toString(usbDevice.getDeviceId()));
             deviceMap.put("vendorid", Integer.toString(usbDevice.getVendorId()));
             deviceMap.put("productid", Integer.toString(usbDevice.getProductId()));

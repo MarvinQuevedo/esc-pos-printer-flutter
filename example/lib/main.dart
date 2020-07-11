@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     } on PlatformException {
       //response = 'Failed to get platform version.';
     }
-    setState((){
+    setState(() {
       devices = returned;
     });
   }
@@ -38,8 +38,8 @@ class _MyAppState extends State<MyApp> {
     } on PlatformException {
       //response = 'Failed to get platform version.';
     }
-    if(returned){
-      setState((){
+    if (returned) {
+      setState(() {
         connected = true;
       });
     }
@@ -61,35 +61,42 @@ class _MyAppState extends State<MyApp> {
           title: new Text('ESC POS'),
           actions: <Widget>[
             new IconButton(
-              icon: new Icon(Icons.refresh), 
-              onPressed: () {
-                _list();
-              }
-            ),
-            connected == true ? new IconButton(
-              icon: new Icon(Icons.print), 
-              onPressed: () {
-                _print();
-              }
-            ) : new Container(),
+                icon: new Icon(Icons.refresh),
+                onPressed: () {
+                  _list();
+                }),
+            connected == true
+                ? new IconButton(
+                    icon: new Icon(Icons.print),
+                    onPressed: () {
+                      _print();
+                    })
+                : new Container(),
           ],
         ),
-        body: devices.length > 0 ? new ListView(
-          scrollDirection: Axis.vertical,
-          children: _buildList(devices),
-        ) : null,
+        body: devices.length > 0
+            ? new ListView(
+                scrollDirection: Axis.vertical,
+                children: _buildList(devices),
+              )
+            : null,
       ),
     );
   }
 
-  List<Widget> _buildList(List devices){
-    return devices.map((device) => new ListTile(
-      onTap: () {
-        _connect(int.parse(device['vendorid']), int.parse(device['productid']));
-      },
-      leading: new Icon(Icons.usb),
-      title: new Text(device['manufacturer'] + " " + device['product']),
-      subtitle: new Text(device['vendorid'] + " " + device['productid']),
-    )).toList();
+  List<Widget> _buildList(List devices) {
+    return devices
+        .map((device) => new ListTile(
+              onTap: () {
+                _connect(int.parse(device['vendorid']),
+                    int.parse(device['productid']));
+              },
+              leading: new Icon(Icons.usb),
+              title: new Text(
+                  device['manufacturer'] + " " + (device['product'] ?? "")),
+              subtitle: new Text(
+                  device['vendorid'] + " " + (device['productid'] ?? "")),
+            ))
+        .toList();
   }
 }
