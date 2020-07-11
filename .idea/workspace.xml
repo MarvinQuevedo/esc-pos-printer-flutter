@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2a94468-40ce-4d17-90f3-a91480c5b049" name="Default Changelist" comment="" />
+    <list default="true" id="e2a94468-40ce-4d17-90f3-a91480c5b049" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/br/com/samhaus/escposprinter/adapter/USBPrinterAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/br/com/samhaus/escposprinter/adapter/USBPrinterAdapter.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -63,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/ocal.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="68">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -97,9 +99,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -125,8 +127,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -156,6 +159,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1324" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" />
@@ -213,8 +217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/ocal.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="68">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>

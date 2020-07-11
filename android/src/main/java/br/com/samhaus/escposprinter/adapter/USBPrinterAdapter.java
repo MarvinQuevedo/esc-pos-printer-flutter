@@ -135,7 +135,7 @@ public class USBPrinterAdapter {
         UsbInterface usbInterface = mUsbDevice.getInterface(0);
         for(int i = 0; i < usbInterface.getEndpointCount(); i++){
             final UsbEndpoint ep = usbInterface.getEndpoint(i);
-            if(ep.getType() == UsbConstants.USB_ENDPOINT_XFER_BULK) {
+            if(ep.getType() == UsbConstants.USB_ENDPOINT_XFER_BULK || ep.getType() == 3) {
                 if(ep.getDirection() == UsbConstants.USB_DIR_OUT) {
                     UsbDeviceConnection usbDeviceConnection = mUSBManager.openDevice(mUsbDevice);
                     if(usbDeviceConnection == null) {
@@ -173,7 +173,7 @@ public class USBPrinterAdapter {
                         int b = mUsbDeviceConnection.bulkTransfer(mEndPoint, bytes, bytes.length, 100000);
                         Log.i(LOG_TAG, "Return Status: b-->"+b);
                     }else{
-                        Log.i(LOG_TAG, "La conección con el servidor ha fallado");
+                        Log.i(LOG_TAG, "La conección con la impresora ha fallado");
                         //Toast.makeText(mContext, "Fallo al imprimir", Toast.LENGTH_SHORT).show();
                     }
 
