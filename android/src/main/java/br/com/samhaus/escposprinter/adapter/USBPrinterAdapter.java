@@ -102,6 +102,7 @@ public class USBPrinterAdapter {
     }
 
     public boolean selectDevice(Integer vendorId, Integer productId) {
+         Toast.makeText(mContext, "Conectando", Toast.LENGTH_LONG).show();
 
         if(mUsbDevice == null || mUsbDevice.getVendorId() != vendorId || mUsbDevice.getProductId()!= productId) {
             closeConnectionIfExists();
