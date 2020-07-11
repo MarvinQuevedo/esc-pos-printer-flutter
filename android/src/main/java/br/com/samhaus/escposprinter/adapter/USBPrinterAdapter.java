@@ -79,7 +79,7 @@ public class USBPrinterAdapter {
         filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
         mContext.registerReceiver(mUsbDeviceReceiver, filter);
         Log.v(LOG_TAG, "ESC POS Printer initialized");
-           Toast.makeText(context, "Actualizado!", Toast.LENGTH_LONG).show();
+           Toast.makeText(mContext, "Actualizado!", Toast.LENGTH_LONG).show();
     }
 
 
